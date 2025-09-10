@@ -1,0 +1,300 @@
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2c5530 !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: #333 !important;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #2c5530 !important;
+    }
+
+    /* Hero Section */
+    .hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* make video fill hero */
+  z-index: -2; /* push video behind everything */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(195, 179, 109, 0.5); /* semi-transparent green overlay */
+  z-index: -1; /* sits between video and content */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* dark shadow for readability */
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+    .whatsapp-btn {
+      background: #117435;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-btn:hover {
+      background: #22c55e;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* About Section */
+    .about {
+      padding: 120px 0;
+      background: #f8f9fa;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .about-image {
+      flex: 1;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      color: #2c5530;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #2c5530;
+      margin-bottom: 50px;
+      font-weight: bold;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      margin: 0 15px;
+    }
+
+    .testimonial-card p {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .testimonial-card .customer-name {
+      font-weight: bold;
+      color: #2c5530;
+      font-size: 1.1rem;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 50px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #2c5530;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 80px 0;
+      background: #2c5530;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a3a1e;
+      color: white;
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      margin-bottom: 20px;
+    }
+
+    .footer-content h4 {
+      margin-bottom: 15px;
+      color: #25D366;
+    }
+
+    .footer-contact {
+      margin-bottom: 20px;
+    }
+
+    .copyright {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      color: #ccc;
+    }
+
+    /* Hamburger menu styling */
+    .navbar-toggler {
+      border: none;
+      padding: 4px 8px;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .about-text h2 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }

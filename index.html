@@ -4,309 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ummi's Food - Homemade Meals Delivered</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- JS -->
+  <script src="js/script.js" defer></script>
+
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    /* Navigation */
-    .navbar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 15px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .navbar-brand {
-      font-size: 24px;
-      font-weight: bold;
-      color: #2c5530 !important;
-    }
-
-    .navbar-nav .nav-link {
-      color: #333 !important;
-      font-weight: 500;
-      margin: 0 10px;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #2c5530 !important;
-    }
-
-    /* Hero Section */
-    .hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* make video fill hero */
-  z-index: -2; /* push video behind everything */
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(195, 179, 109, 0.5); /* semi-transparent green overlay */
-  z-index: -1; /* sits between video and content */
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* dark shadow for readability */
-}
-
-.hero-content p {
-  font-size: 1.3rem;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1.1rem;
-  }
-}
-
-    .whatsapp-btn {
-      background: #117435;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 50px;
-      font-size: 18px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    }
-
-    .whatsapp-btn:hover {
-      background: #22c55e;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-      color: white;
-      text-decoration: none;
-    }
-
-    /* About Section */
-    .about {
-      padding: 120px 0;
-      background: #f8f9fa;
-    }
-
-    .about-content {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-    }
-
-    .about-image {
-      flex: 1;
-    }
-
-    .about-image img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    .about-text {
-      flex: 1;
-    }
-
-    .about-text h2 {
-      font-size: 2.5rem;
-      color: #2c5530;
-      margin-bottom: 25px;
-      font-weight: bold;
-    }
-
-    .about-text p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #666;
-    }
-
-    /* Testimonials */
-    .testimonials {
-      padding: 100px 0;
-      background: white;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #2c5530;
-      margin-bottom: 50px;
-      font-weight: bold;
-    }
-
-    .testimonial-card {
-      background: white;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      text-align: center;
-      margin: 0 15px;
-    }
-
-    .testimonial-card p {
-      font-size: 1.2rem;
-      font-style: italic;
-      margin-bottom: 20px;
-      color: #555;
-    }
-
-    .testimonial-card .customer-name {
-      font-weight: bold;
-      color: #2c5530;
-      font-size: 1.1rem;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 50px;
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-color: #2c5530;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-    }
-
-    /* Contact Section */
-    .contact {
-      padding: 80px 0;
-      background: #2c5530;
-      color: white;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .contact p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-
-    /* Footer */
-    .footer {
-      background: #1a3a1e;
-      color: white;
-      padding: 40px 0 20px;
-      text-align: center;
-    }
-
-    .footer-content {
-      margin-bottom: 20px;
-    }
-
-    .footer-content h4 {
-      margin-bottom: 15px;
-      color: #25D366;
-    }
-
-    .footer-contact {
-      margin-bottom: 20px;
-    }
-
-    .copyright {
-      border-top: 1px solid #333;
-      padding-top: 20px;
-      color: #ccc;
-    }
-
-    /* Hamburger menu styling */
-    .navbar-toggler {
-      border: none;
-      padding: 4px 8px;
-    }
-
-    .navbar-toggler:focus {
-      box-shadow: none;
-    }
-
-    .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero-content p {
-        font-size: 1.1rem;
-      }
-
-      .about-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .navbar-nav {
-        text-align: center;
-      }
-
-      .about-text h2 {
-        font-size: 2rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -314,73 +20,57 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="#">Ummi's Food</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#testimonials">Testimonials</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-<!-- Hero Section -->
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="/asset/home-intro.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="asset/home-intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-  <div class="hero-overlay"></div> <!-- optional overlay for readability -->
+    <div class="hero-overlay"></div>
 
-  <div class="hero-content">
-    <div>
-      <h1>Ummi's Food</h1>
-      <p>Authentic homemade meals delivered fresh to your door</p>
-      <a href="https://wa.me/919052148447?text=Hi%20Ummi%27s%20Food%21%20I%27d%20like%20to%20place%20an%20order." 
-         class="whatsapp-btn" target="_blank">
-        💬 Order on WhatsApp
-      </a>
+    <div class="hero-content">
+      <div>
+        <h1>Ummi's Food</h1>
+        <p>Authentic homemade meals delivered fresh to your door</p>
+        <a href="https://wa.me/919052148447?text=Hi%20Ummi%27s%20Food%21%20I%27d%20like%20to%20place%20an%20order." 
+           class="whatsapp-btn" target="_blank">💬 Order on WhatsApp</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="about">
     <div class="container">
       <div class="about-content">
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1683533738338-19b9a22c6405?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+          <img src="https://images.unsplash.com/photo-1683533738338-19b9a22c6405?q=80&w=1169&auto=format&fit=crop" 
                alt="Homemade cooking">
         </div>
         <div class="about-text">
           <h2>Homemade with Love</h2>
-          <p>
-            At Ummi's Food, we believe that the best meals come from the heart. Every dish is carefully prepared 
-            using traditional recipes passed down through generations, with the freshest ingredients and authentic 
-            flavors that remind you of home.
-          </p>
-          <p>
-            We understand the comfort that comes from a home-cooked meal, especially when you're away from family. 
-            That's why we've made it our mission to bring that warmth and love directly to your doorstep, 
-            one delicious meal at a time.
-          </p>
+          <p>At Ummi's Food, we believe the best meals come from the heart...</p>
+          <p>We understand the comfort that comes from a home-cooked meal...</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
+  <!-- Testimonials -->
   <section id="testimonials" class="testimonials">
     <div class="container">
       <h2 class="section-title">What Our Customers Say</h2>
@@ -388,25 +78,25 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="testimonial-card">
-              <p>"The food tastes just like my grandmother's cooking! Every bite brings back memories of home. Ummi's Food has become my go-to for authentic, delicious meals."</p>
+              <p>"The food tastes just like my grandmother's cooking..."</p>
               <div class="customer-name">- Aisha M.</div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="testimonial-card">
-              <p>"Amazing quality and incredible flavors! The ingredients are always fresh, and you can taste the love in every dish. Highly recommend to anyone missing home-cooked meals."</p>
+              <p>"Amazing quality and incredible flavors!..."</p>
               <div class="customer-name">- Omar K.</div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="testimonial-card">
-              <p>"Best homemade food delivery in town! Fast, reliable service and the food always arrives hot and perfectly packaged. It's like having family cook for you."</p>
+              <p>"Best homemade food delivery in town!..."</p>
               <div class="customer-name">- Fatima S.</div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="testimonial-card">
-              <p>"I order from Ummi's Food at least twice a week. The variety is great, the portions are generous, and the taste is consistently excellent. Truly feels like home!"</p>
+              <p>"I order from Ummi's Food at least twice a week..."</p>
               <div class="customer-name">- Ahmed R.</div>
             </div>
           </div>
@@ -423,15 +113,13 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="contact">
     <div class="container">
       <h2>Ready to Order?</h2>
       <p>Get in touch with us today and experience the taste of home</p>
       <a href="https://wa.me/919052148447?text=Hi%20Ummi%27s%20Food%21%20I%27d%20like%20to%20place%20an%20order." 
-         class="whatsapp-btn" target="_blank">
-        💬 Chat with us on WhatsApp
-      </a>
+         class="whatsapp-btn" target="_blank">💬 Chat with us on WhatsApp</a>
     </div>
   </section>
 
@@ -450,58 +138,9 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-  <script>
-    // Video control for hero section - play only first 0.07 seconds
-    document.addEventListener('DOMContentLoaded', function() {
-      const heroVideo = document.querySelector('.hero-video');
-      if (heroVideo) {
-        heroVideo.addEventListener('loadeddata', function() {
-          heroVideo.currentTime = 0;
-        });
-      }
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const offsetTop = target.offsetTop - 80;
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Add active class to navigation based on scroll position
-    window.addEventListener('scroll', function() {
-      const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.scrollY + 100;
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.navbar-nav a[href="#${sectionId}"]`);
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-            link.classList.remove('active');
-          });
-          if (navLink) {
-            navLink.classList.add('active');
-          }
-        }
-      });
-    });
-  </script>
 </body>
 </html>
